@@ -29,7 +29,11 @@ Install the gem with
 
 Startbrick works with Rails 3.
 
-To use startbrick, start your Rails app with this command:
+To use startbrick, puts this line in your Gemfile
+
+    gem 'startbrick'
+
+and start your Rails app with this command:
 
     startbrick
 
