@@ -19,7 +19,7 @@ to turn into this:
     [2011-11-01 13:22:01] INFO  ruby 1.9.2 (2011-07-09) [i686-linux]
     [2011-11-01 13:22:01] INFO  WEBrick::HTTPServer#start: pid=4012 port=3000
 
-just so you can manually reload the Rails app in your web browser?
+just so you can manually load the Rails app in your web browser?
 
 **Startbrick** is a thin wrapper gem around Rack::Handler::WEBrick that
 automatically opens your Rails app in your default web browser when it's ready
