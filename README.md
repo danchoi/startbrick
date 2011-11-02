@@ -29,7 +29,8 @@ Install the gem with
 
     gem install startbrick
 
-Startbrick works with Rails 3.
+Startbrick works with Rails 3. It doesn't work with JRuby because it
+uses `Kernel#fork`.
 
 To use startbrick, puts this line in your Gemfile
 
