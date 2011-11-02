@@ -1,2 +1,5 @@
-#!/bin/bash
-`ruby -rstartbrick `which rails` s "$@" Startbrick
+#!/usr/bin/env ruby
+rails = `which rails`.chomp
+cmd = "ruby -rstartbrick #{rails} s #{ARGV.join(' ')} Startbrick"
+puts cmd
+`#{cmd}`
