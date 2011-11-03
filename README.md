@@ -40,7 +40,7 @@ and start your Rails app with this command:
 
     startbrick
 
-You can add any of the arguments that you can pass to the `rails s`
+You can add any of the flagged arguments that you can pass to the `rails s`
 command.
 
 ## Optional .startbrick script
