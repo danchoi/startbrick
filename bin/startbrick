@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 cmd = "rails s #{ARGV.join(' ').strip} Startbrick"
 puts cmd
-`#{cmd}`
+exec cmd
