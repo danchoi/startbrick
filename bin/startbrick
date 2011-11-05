@@ -14,16 +14,21 @@ opt_parser = OptionParser.new do |opts|
 end
 
 opt_parser.parse! args
-puts options.inspect
 
-cmd = "rails s #{ARGV.join(' ').strip}"
+SCRIPT_FILE = '.startbrick'
 
 open_cmd = "open 'http://#{options[:Host]}:#{options[:Port]}'"
-puts open_cmd
-fork do
-  `while ! nc -z localhost #{options[:Port]}; do sleep 0.1; done; echo 'opening browser'; #{open_cmd}`
+
+if File.size?(SCRIPT_FILE)
+  open_cmd = "bash #{SCRIPT_FILE}"
 end
 
-puts cmd
+puts "Post startup command: #{open_cmd}"
 
+fork do
+  `while ! nc -z localhost #{options[:Port]}; do sleep 0.1; done; echo 'Running #{open_cmd}'; #{open_cmd}`
+end
+
+cmd = "rails s #{ARGV.join(' ').strip}"
+puts cmd
 exec cmd

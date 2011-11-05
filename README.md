@@ -42,3 +42,14 @@ requests.
 You can add any of the arguments that you can pass to the `rails s`
 command.
 
+
+## Optional .startbrick script
+
+By default, Startbrick runs this shell command when the Rails server is
+ready for requests:
+
+    open "http://#{Host}:#{Port}"
+
+You can override this by putting your own commands in a shell script in
+a `.startbrick` file in your Rails root directory.
+
