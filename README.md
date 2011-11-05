@@ -1,6 +1,6 @@
 # Startbrick
 
-How much of your Rails dev time is utterly wasted waiting for this: 
+How much of your Rails dev time is wasted waiting for this: 
 
     $ rails s
     => Booting WEBrick
@@ -21,7 +21,7 @@ to turn into this:
 
 just so you can manually load the Rails app in your web browser?
 
-**Startbrick** is a thin wrapper gem around Rack::Handler::WEBrick that
+**Startbrick** is a thin wrapper around the `rails s` command that
 automatically opens your Rails app in your default web browser when it's ready
 to accept requests.
 
@@ -32,21 +32,20 @@ Install the gem with
 Startbrick works with Rails 3. It doesn't work with JRuby because it
 uses `Kernel#fork`.
 
-To use startbrick, puts this line in your Gemfile
-
-    gem 'startbrick'
-
-and start your Rails app with this command:
+Start your Rails app with this command:
 
     startbrick
 
-You can add any of the flagged arguments that you can pass to the `rails s`
+The browser should open to your app once the server is ready to accept
+requests.
+
+You can add any of the arguments that you can pass to the `rails s`
 command.
 
 ## Optional .startbrick script
 
-By default, Startbrick runs this shell command when WEBrick is ready for
-requests:
+By default, Startbrick runs this shell command when the Rails server is
+ready for requests:
 
     open "http://#{BindAddress}:#{Port}"
 

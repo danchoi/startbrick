@@ -3,7 +3,7 @@ require 'startbrick/version'
 
 Gem::Specification.new do |s|
   s.name = "startbrick"
-  s.description = "WEBrick wrapper"
+  s.description = "rails s wrapper"
   s.version = Startbrick::VERSION
   s.summary = s.description
   s.authors = ["Daniel Choi"]
