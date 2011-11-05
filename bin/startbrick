@@ -26,7 +26,7 @@ end
 puts "Post startup command: #{open_cmd}"
 
 fork do
-  `while ! nc -z localhost #{options[:Port]}; do sleep 0.1; done; echo 'Running #{open_cmd}'; #{open_cmd}`
+  `while ! nc -z #{options[:Host]} #{options[:Port]}; do sleep 0.1; done; echo 'Running #{open_cmd}'; #{open_cmd}`
 end
 
 cmd = "rails s #{ARGV.join(' ').strip}"
